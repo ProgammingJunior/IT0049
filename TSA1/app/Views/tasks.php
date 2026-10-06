@@ -1,0 +1,31 @@
+<section class="page-heading compact-heading">
+    <p class="eyebrow">THE COMPLETE VIEW</p>
+    <h1>All tasks<span class="heading-period">.</span></h1>
+    <p class="page-intro">Every task, arranged by date.</p>
+</section>
+<section class="task-section" aria-label="All tasks">
+    <?php if ($tasks === []): ?>
+        <p class="empty-state">No tasks yet.</p>
+    <?php else: ?>
+        <?php $currentDate = null; ?>
+        <?php foreach ($tasks as $index => $task): ?>
+            <?php if ($currentDate !== $task['task_date']): ?>
+                <?php $currentDate = $task['task_date']; ?>
+                <div class="date-group">
+                    <h2><?= e(date('l, F j, Y', strtotime($currentDate))) ?></h2>
+                    <ul class="task-list">
+            <?php endif; ?>
+                        <?php $statusClass = strtolower(str_replace(' ', '-', $task['status'])); ?>
+                        <li class="task-row">
+                            <span class="task-marker" aria-hidden="true"></span>
+                            <span class="task-title"><?= e($task['title']) ?></span>
+                            <span class="status status-<?= e($statusClass) ?>"><?= e(ucfirst($task['status'])) ?></span>
+                        </li>
+            <?php $nextDate = $tasks[$index + 1]['task_date'] ?? null; ?>
+            <?php if ($nextDate !== $currentDate): ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</section>
