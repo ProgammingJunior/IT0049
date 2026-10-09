@@ -1,0 +1,10 @@
+# Copy this file to setup/.env and adjust values for local MySQL.
+CI_ENVIRONMENT = development
+app.baseURL = 'http://localhost/IT0049/TFA4/public/'
+database.default.hostname = localhost
+database.default.database = tfa4_pos
+database.default.username = root
+database.default.password =
+database.default.DBDriver = MySQLi
+database.default.DBPrefix =
+database.default.port = 3306
