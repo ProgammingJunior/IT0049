@@ -1,0 +1,4 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>@yield('title','Tasks for Today') · Daymark</title><link rel="stylesheet" href="{{ asset('css/app.css') }}"></head><body>
+<header class="topbar"><a class="brand" href="{{ route('home') }}"><span class="brand-icon">D</span><span>daymark<small>YOUR DAY, IN VIEW</small></span></a><nav aria-label="Main navigation"><a href="{{ route('home') }}">Today</a><a href="{{ route('tasks.index') }}">All tasks</a><a href="{{ route('profile') }}">Profile</a><a href="{{ route('about') }}">About</a></nav></header>
+<main class="shell">@yield('content')</main><footer class="footer"><span>Daymark · Tasks for Today</span><span>TSA3 · Laravel and Eloquent</span></footer></body></html>

@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS tfa6_pos CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE tfa6_pos;
+
+CREATE TABLE users (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,username VARCHAR(50) NOT NULL UNIQUE,full_name VARCHAR(100) NOT NULL,created_at TIMESTAMP NULL,updated_at TIMESTAMP NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE customers (id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,full_name VARCHAR(100) NOT NULL,email VARCHAR(100) NOT NULL,phone VARCHAR(20) NULL,created_at TIMESTAMP NULL,updated_at TIMESTAMP NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+INSERT INTO customers (full_name,email,phone,created_at,updated_at) VALUES ('Alice Johnson','alice@example.com','555-0101',NOW(),NOW()),('Bob Smith','bob@example.com','555-0102',NOW(),NOW()),('Carol Davis','carol@example.com','555-0103',NOW(),NOW()),('David Brown','david@example.com','555-0104',NOW(),NOW()),('Eva Wilson','eva@example.com','555-0105',NOW(),NOW());
+INSERT INTO users (username,full_name,created_at,updated_at) VALUES ('admin','Alice Johnson',NOW(),NOW()),('bsmith','Bob Smith',NOW(),NOW()),('cdavis','Carol Davis',NOW(),NOW()),('dbrown','David Brown',NOW(),NOW()),('ewilson','Eva Wilson',NOW(),NOW());
