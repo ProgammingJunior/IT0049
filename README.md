@@ -1,6 +1,6 @@
 # IT0049 Activity Showcase
 
-This repository contains the activity projects and a single-file static showcase. Open `index.html` locally, or publish it with GitHub Pages to browse sample front-end screens for TFA1–TFA8, TSA1–TSA4, and the final POS project. The activity selector and next arrow move through the samples; all displayed records are hardcoded.
+The single-file static showcase is [Activities_Showcase.html](Activities_Showcase.html). It contains hardcoded sample screens for TFA1–TFA8, TSA1–TSA4, and the final POS project, with previous/next navigation. The root `index.html` redirects to it so the GitHub Pages site opens at its main URL.
 
 ## Enable GitHub Pages
 
